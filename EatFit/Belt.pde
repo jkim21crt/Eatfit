@@ -1,17 +1,19 @@
 class Belt{
- int x;
- int y;
- int width;
- int height;
+ int xpos;
+ int ypos;
+ 
+ Belt(int x, int y)
+ {
+   xpos = x;
+   ypos = y;
+   
+ }
   
-void draw(){
-   fill(100);
-   ellipse(300, 250, 50,50);
-   rotate(PI);  
+void spin(){
+  
+  image(wheel,xpos,ypos);
+   
   }
   
-  
-  
-  
-  
+   
 }

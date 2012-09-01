@@ -1,6 +1,6 @@
 class Eater{
-int x;
-int y;
+int xpos;
+int ypos;
 int height;
 int width;
 
@@ -8,11 +8,13 @@ Eater(int x,int y)
 {
  xpos = x;
  ypos = y;
+ 
   
 }
-draw(
+void eat(){
   
-loadImage(man,20, 150);
+image(man,xpos, ypos);
+
 }
 
 

@@ -99,12 +99,12 @@ for(int n = 0; n<goodArray.length; n++){
  }
 }    //    good hitTest 
   
-   
-   for(int n = 0; n<goodArray.length; n++){
+ /*  
+   for(int q = 0; q<goodArray.length; q++){
     
-     if(mousePressed && mouseX<goodArray[n].xpos+goodArray[n].width && mouseX>goodArray[n].xpos && mouseY<goodArray[n].ypos+goodArray[n].height && mouseY>goodArray[n].ypos)
+     if(mousePressed && mouseX<goodArray[q].xpos+goodArray[q].width && mouseX>goodArray[q].xpos && mouseY<goodArray[q].ypos+goodArray[q].height && mouseY>goodArray[q].ypos)
      {
-       goodArray[n].reset();
+       goodArray[q].reset();
      }
    }
    
@@ -115,6 +115,8 @@ for(int n = 0; n<goodArray.length; n++){
        junkArray[n].reset();
      }
    }
+   
+   */
    
   ///killfunction
   

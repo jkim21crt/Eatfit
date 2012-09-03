@@ -1,8 +1,8 @@
 class Eater{
 int xpos;
 int ypos;
-int height;
-int width;
+int height = 300;
+int width = 80;
 
 Eater(int x,int y)
 {
@@ -13,7 +13,11 @@ Eater(int x,int y)
 }
 void eat(){
   
+fill(0);
+noStroke();
+ellipse(155,330, wide, 180);  
 image(man,xpos, ypos);
+
 
 }
 

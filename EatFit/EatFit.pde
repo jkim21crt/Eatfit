@@ -6,13 +6,16 @@ PImage burger;
 int wide=1;
 int counter=0;
 int d = 300;
-float beltSpeed = .04;
-int Fspeed = 3;
+float beltSpeed = .06;
+int Fspeed = 4;
 int score = 0;
-
+int t= 0;
+int Fat = 0;
+int y = 0;
+int blow = 30;
 Belt[]wheelArray = new Belt[10];
 Eater eater = new Eater(50,150);
-Mouth chomp = new Mouth(30,110);
+Mouth chomp = new Mouth(30,110,blow);
 Bad[] junkArray = new Bad[5];
 Good[] goodArray = new Good[9];
 
@@ -21,7 +24,7 @@ void setup(){
   
   size(1000,500);
   background(255);
-  
+
   
   wheel = loadImage("wheel.png");
   man = loadImage("man.png");
@@ -45,10 +48,12 @@ void setup(){
 }
 
 void draw(){
+  
   smooth();
   background(255);
   eater.eat();
   image(wheel,50,110); //change to mouth structure
+  
   
   pushMatrix();
   chomp.chew();
@@ -73,12 +78,11 @@ void draw(){
   if(hitTest(eater,junkArray[n]))
   {
     junkArray[n].reset();
-    
-    if(wide<=200){
-    wide+=10;
-    
+    if(wide<210){
+      wide+=20;  
+   }
   }
-  }
+  
   
   }// hittest nobueno
 
@@ -88,18 +92,34 @@ for(int n = 0; n<goodArray.length; n++){
    score++;
    if(score>10){
     Fspeed+=4; 
-    beltSpeed+=.02;
+    beltSpeed+=.04;
    }
    if(score>20){
     Fspeed+=4; 
-    beltSpeed+=.02;
+    beltSpeed+=.04;
    }
    
    goodArray[n].reset(); 
  }
 }    //    good hitTest 
   
- /*  
+  
+  if(wide>200){
+    
+   ellipse(155,330,int(random(0,100)), int(random(0,100)));
+   chomp.f= -45;
+   if(chomp.deg==-80){
+     image(malfunction,0,0);
+    noLoop(); 
+    
+   }
+    
+  }
+  
+  
+  
+  
+ 
    for(int q = 0; q<goodArray.length; q++){
     
      if(mousePressed && mouseX<goodArray[q].xpos+goodArray[q].width && mouseX>goodArray[q].xpos && mouseY<goodArray[q].ypos+goodArray[q].height && mouseY>goodArray[q].ypos)
@@ -116,20 +136,9 @@ for(int n = 0; n<goodArray.length; n++){
      }
    }
    
-   */
+ 
    
-  ///killfunction
-  
-  if(wide==200)
-  {
-   fill(int(random(0,255))); 
-   noStroke();
-   rotate(radians(5));
-   translate(155,330);
-   rect(0,0,20,20);
-   
-    
-  }
+
   
   
   

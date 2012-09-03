@@ -16,14 +16,14 @@ class Good{
   image(chicken, xpos, ypos);
    xpos-=speed;
    
-   if(score<10)
+   if(score<20)
     speed = Fspeed;
    
-   if(score>10&&score<20){
+   if(score>20&&score<40){
     speed=8; 
     beltSpeed+=.08;
    }
-   if(score>20){
+   if(score>40){
     speed=16; 
     beltSpeed+=.1;
    }

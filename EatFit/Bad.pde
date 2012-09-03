@@ -16,14 +16,14 @@ class Bad{
   image(burger, xpos, ypos);
    xpos-=speed;
    
-   if(score<10)
+   if(score<20)
     speed = Fspeed;
    
-   if(score>10&&score<20){
+   if(score>20&&score<40){
     speed=7; 
     beltSpeed+=.08;
    }
-   if(score>20){
+   if(score>40){
     speed=12; 
     beltSpeed+=.1;
    }

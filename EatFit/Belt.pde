@@ -1,8 +1,9 @@
 class Belt{
  int xpos;
  int ypos;
- 
- Belt(int x, int y)
+ float rot=0.0;
+ int speed;
+ Belt(int x, int y, int z)
  {
    xpos = x;
    ypos = y;
@@ -10,10 +11,13 @@ class Belt{
  }
   
 void spin(){
-  
-  image(wheel,xpos,ypos);
-   
-  }
+  rot-= speed;
+  pushMatrix();
+  translate(xpos,ypos);
+  rotate(rot);
+  image(wheel,0,0);
+  popMatrix();
+}
   
    
 }

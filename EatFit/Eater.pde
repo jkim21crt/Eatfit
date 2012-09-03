@@ -13,7 +13,10 @@ Eater(int x,int y)
 }
 void eat(){
   
+fill(0);
+ellipse(150,330, wide, 180);  
 image(man,xpos, ypos);
+
 
 }
 

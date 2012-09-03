@@ -15,6 +15,18 @@ class Good{
  void spawn(){
   image(chicken, xpos, ypos);
    xpos-=speed;
+   
+   if(score<10)
+    speed = Fspeed;
+   
+   if(score>10&&score<20){
+    speed=8; 
+    beltSpeed+=.08;
+   }
+   if(score>20){
+    speed=16; 
+    beltSpeed+=.1;
+   }
  }
  
  void reset(){

@@ -8,7 +8,7 @@ int wide=1;
 int counter=0;
 int d = 300;
 float beltSpeed = .06;
-int Fspeed = 4;
+int Fspeed= 3;
 int score = 0;
 int t= 0;
 int Fat = 0;
@@ -59,6 +59,7 @@ void draw(){
   pushMatrix();
   chomp.chew();
   popMatrix();
+  text(score*100, 900,50);
  
  for(int i = 0; i<wheelArray.length;i++){
    wheelArray[i].spin();
@@ -91,18 +92,12 @@ for(int n = 0; n<goodArray.length; n++){
  if(hitTest(eater, goodArray[n]))
  {
    score++;
-   if(score>10){
-    Fspeed+=4; 
-    beltSpeed+=.04;
-   }
-   if(score>20){
-    Fspeed+=4; 
-    beltSpeed+=.04;
-   }
-   
    goodArray[n].reset(); 
  }
 }    //    good hitTest 
+  
+//score and speed
+  
   
   
   if(wide>200){

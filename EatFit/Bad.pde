@@ -15,6 +15,19 @@ class Bad{
  void spawn(){
   image(burger, xpos, ypos);
    xpos-=speed;
+   
+   if(score<10)
+    speed = Fspeed;
+   
+   if(score>10&&score<20){
+    speed=7; 
+    beltSpeed+=.08;
+   }
+   if(score>20){
+    speed=12; 
+    beltSpeed+=.1;
+   }
+   
  }
  
  void reset(){

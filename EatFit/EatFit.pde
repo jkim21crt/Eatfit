@@ -3,6 +3,7 @@ PImage mouth;
 PImage wheel;
 PImage chicken;
 PImage burger;
+PImage malfunction;
 int wide=1;
 int counter=0;
 int d = 300;
@@ -31,7 +32,7 @@ void setup(){
   burger = loadImage("burger.png");
   chicken = loadImage("chicken.png");
   mouth = loadImage("mouth.png");
-  
+  malfunction = loadImage("malfunction.png");
     for(int i = 0; i<wheelArray.length;i++){
    wheelArray[i] = new Belt(i*70 +250,210, beltSpeed);
   }
@@ -109,7 +110,7 @@ for(int n = 0; n<goodArray.length; n++){
    ellipse(155,330,int(random(0,100)), int(random(0,100)));
    chomp.f= -45;
    if(chomp.deg==-80){
-     image(malfunction,0,0);
+    image(malfunction,0,0);
     noLoop(); 
     
    }
